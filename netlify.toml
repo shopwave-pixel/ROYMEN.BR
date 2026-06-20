@@ -1,0 +1,30 @@
+# ===================================================================
+# ROY MEN - NETLIFY PRODUCTION DEPLOYMENT CONFIGURATION
+# ===================================================================
+
+[build]
+  # Output directory of your Vite build
+  publish = "dist"
+  
+  # Base script command for dependency bundling
+  command = "npm run build"
+
+# -------------------------------------------------------------------
+# SPA FALLBACK ROUTING
+# Crucial for React Router client-side path mechanics
+# -------------------------------------------------------------------
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+# -------------------------------------------------------------------
+# OPTIONAL API PROXY REDIRECT
+# Active only if decoupling React SPA (Netlify) from Express Backend (Railway)
+# Replace with your live Railway / server domain endpoint:
+# -------------------------------------------------------------------
+# [[redirects]]
+#   from = "/api/*"
+#   to = "https://roy-men-production.up.railway.app/api/:splat"
+#   status = 200
+#   force = true

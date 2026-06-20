@@ -1,0 +1,8 @@
+{
+  "name": "ROY MEN Backend Blueprint",
+  "description": "Production e-commerce frontend storefront and administration control center for ROY MEN - Wear Confidence.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
