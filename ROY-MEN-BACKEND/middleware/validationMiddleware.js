@@ -13,8 +13,8 @@ export const validateRequestOtp = (req, res, next) => {
     return next(new Error('Email address is mandatory.'));
   }
 
-  // Basic email pattern check
-  const emailRegex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
+  // Basic email pattern check (escaped hyphens to prevent range out-of-order in modern JS engines)
+  const emailRegex = /^[\w\-\.]+@([\w\-]+\.)+[\w\-]{2,4}$/;
   if (!emailRegex.test(email)) {
     res.status(400);
     return next(new Error('Please supply a standard, syntactically valid active email.'));
